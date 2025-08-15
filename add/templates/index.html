@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <form action="solve">
+        <label>Enter a number:</label>
+        <input type="number" name="num1" required>
+
+        <label>Enter another number:</label>
+        <input type="number" name="num2" required>
+
+        <label>Choose an operator:</label>
+        <select name="op" required>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+
+        <input type="submit" value="Calculate">
+    </form>
+{% endblock %}
