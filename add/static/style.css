@@ -25,6 +25,48 @@ body {
     font-size: 1.8em;
     color: #333;
 }
+.calculator-container {
+    max-width: 400px; /* Prevent it from being too wide */
+    width: 70%; /* Flexible width for small screens */
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input, select {
+    width: 100%;
+    box-sizing: border-box; /* Prevent overflow */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: #45a049;
+}
+
 
 /* Form Labels */
 form label {
@@ -82,4 +124,27 @@ input[type=number]::-webkit-outer-spin-button {
 /* Hide number input arrows for Firefox */
 input[type=number] {
     -moz-appearance: textfield;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .calculator-container {
+        max-width: 70%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+
+    input, select {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    input[type="submit"] {
+        font-size: 14px;
+        padding: 10px;
+    }
 }
