@@ -2,7 +2,8 @@
 {% load static %}
 
 {% block body %}
-    <form action="solve">
+    <form action="solve" method="post">
+        {% csrf_token %}
         <label>Enter a number:</label>
         <input type="number" name="num1" required>
 

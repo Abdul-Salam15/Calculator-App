@@ -6,9 +6,9 @@ def index(request):
     return render(request, "index.html")
 
 def solve(request):
-    value1 = int(request.GET['num1'])
-    value2 = int(request.GET['num2'])
-    op = request.GET['op']
+    value1 = int(request.POST['num1'])
+    value2 = int(request.POST['num2'])
+    op = request.POST['op']
     if op == "+":
         res = value1 + value2
     elif op == "-":
