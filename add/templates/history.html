@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="result">
+        <h1>Calculation History</h1>
+        <ul>
+            {% for calc in history %}
+                <li>{{ calc.timestamp }} → {{ calc.expression }} = <span style="color:green">{{ calc.result }}</span></li>
+            {% empty %}
+                <li>No history yet.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <a href="{% url 'index' %}">Back to Home Page</a>
+{% endblock %}
+
+

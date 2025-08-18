@@ -2,21 +2,26 @@
 {% load static %}
 
 {% block body %}
+    <h1>Calculator App</h1>
+    <a href="{% url 'history' %}">Check History</a>
     <form action="solve" method="post">
         {% csrf_token %}
         <label>Enter a number:</label>
-        <input type="number" name="num1" required>
-
-        <label>Enter another number:</label>
-        <input type="number" name="num2" required>
+        <input type="number" name="num1" >
 
         <label>Choose an operator:</label>
-        <select name="op" required>
-            <option value="+">+</option>
-            <option value="-">-</option>
-            <option value="*">*</option>
-            <option value="/">/</option>
+        <select name="op" required >
+            <option value="" disabled selected>Select an operator</option>
+            <option value="+">Addition : +</option>
+            <option value="-">Subtraction : -</option>
+            <option value="*">Multiplication : *</option>
+            <option value="/">Division : /</option>
+            <option value="^">Exponent : ^</option>
+            <option value="%">Percentage : %</option>
         </select>
+
+        <label>Enter another number:</label>
+        <input type="number" name="num2" >
 
         <input type="submit" value="Calculate">
     </form>

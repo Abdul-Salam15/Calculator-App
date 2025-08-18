@@ -8,9 +8,32 @@
     <title>Calculator</title>
 </head>
 <body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="nav-left">
+      <a href="{% url 'index' %}" class="brand">🧮</a>
+    </div>
+    <div class="nav-right">
+      {% if user.is_authenticated %}
+        <span class="welcome">Welcome, {{ user.username }}!</span>
+        <form method="post" action="{% url 'logout' %}">
+    {% csrf_token %}
+    <button type="submit" class="btn-logout">Logout</button>
+</form>
+      {% else %}
+        <a href="{% url 'login' %}" class="nav-link">Login</a>
+        <a href="{% url 'register' %}" class="nav-link">Register</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+
+
     <div class="calculator-container">
-        <h1>Calculator App</h1>
+       
         {% block body %}
+        
         {% endblock %}
     </div>
 </body>

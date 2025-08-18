@@ -2,7 +2,11 @@
 {% load static %}
 
 {% block body %}
+
     <div class="result">
-        Result is {{ result }}
+        <a href="history">Check History</a>
+        <p>Result is <span class="result_color">{{ result }}</span></p>
+        
     </div>
+    <a href="index">Back to Home Page</a>
 {% endblock %}
