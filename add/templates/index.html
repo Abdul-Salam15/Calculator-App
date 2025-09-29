@@ -7,7 +7,7 @@
     <form action="{% url 'solve' %}" method="post">
         {% csrf_token %}
         <label>Enter a number:</label>
-        <input type="number" name="num1" >
+        <input type="number" name="num1" required>
 
         <label>Choose an operator:</label>
         <select name="op" required >
@@ -21,7 +21,7 @@
         </select>
 
         <label>Enter another number:</label>
-        <input type="number" name="num2" >
+        <input type="number" name="num2" required>
 
         <form method="post" action="{% url 'solve' %}">
             {% csrf_token %}
