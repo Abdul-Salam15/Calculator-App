@@ -63,7 +63,7 @@ def solve(request):
     elif op == "^":
         res = value1 ** value2
     elif op == "%":
-    res = str((value1 / 100) * value2) + '%'
+        res = (value1 / 100) * value2
     else:
         res = "Invalid operator"
 
